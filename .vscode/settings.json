@@ -1,5 +1,6 @@
 {
     "cSpell.words": [
+        "curpath",
         "haspathsum",
         "inorder",
         "inver",
@@ -7,6 +8,8 @@
         "nextorder",
         "nums",
         "preorder",
-        "targetsum"
+        "respath",
+        "targetsum",
+        "traveltree"
     ]
 }
