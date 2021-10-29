@@ -15,7 +15,7 @@
  * @return {number[]}
  */
 
-// 前序遍历
+// 前序遍历（中左右）
 var preorderTraversal = function (root, res = []) {
     if (!root) return res;
     res.push(root.val);
@@ -24,7 +24,7 @@ var preorderTraversal = function (root, res = []) {
     return res;
 };
 
-// 中序遍历
+// 中序遍历（左中右）
 var inorderTraversal = function (root, res = []) {
     if (!root) return res;
     inorderTraversal(root.left, res);
@@ -33,7 +33,7 @@ var inorderTraversal = function (root, res = []) {
     return res;
 };
 
-// 后序遍历
+// 后序遍历（左右中）
 var nextorderTraversal = function (root, res = []) {
     if (!root) return res;
     nextorderTraversal(root.left, res);

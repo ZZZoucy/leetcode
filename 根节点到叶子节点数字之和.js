@@ -21,7 +21,7 @@ const dfs = (root, prevSum) => {
         return 0;
     }
     const sum = prevSum * 10 + root.val;
-    if ((root.left === null) & (root.right === null)) {
+    if (root.left === null && root.right === null) {
         return sum;
     } else {
         return dfs(root.left, sum) + dfs(root.right, sum);

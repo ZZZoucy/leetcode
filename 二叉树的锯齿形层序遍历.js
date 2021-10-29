@@ -22,7 +22,6 @@ var zigzagLevelOrder = function (root) {
 
     const ans = [];
     const nodeQueue = [root];
-
     let isOrderLeft = true;
 
     while (nodeQueue.length) {
