@@ -15,6 +15,7 @@
  * @return int整型一维数组
  */
 function twoSum(nums, target) {
+    //
     let hash = {};
     for (let i = 0; i < nums.length; i++) {
         let n = target - nums[i];
@@ -24,5 +25,16 @@ function twoSum(nums, target) {
         hash[nums[i]] = i;
     }
     return [];
+
+    // 暴力解法
+    /*
+    for (let i = 0; i < nums.length; i++) {
+        for (let j = i + 1; j < nums.length; j++) {
+            if (nums[i] + nums[j] === target) {
+                arr = [i, j];
+            }
+        }
+    }
+    return arr;
+    */
 }
-console.log(twoSum([2, 7, 11, 15], 9));

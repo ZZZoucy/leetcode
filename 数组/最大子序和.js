@@ -11,11 +11,12 @@
 // 局部最优：当前“连续和”为负数就立刻放弃
 // 全局最优：选取最大“连续和”
 // 遍历 nums，从头开始用 count 累计
-// 如果 count 一旦加上 bums[i] 变成负数，那就从 nums[i+1]开始从 0 累计 count
+// 如果 count 一旦加上 nums[i] 变成负数，那就从 nums[i+1]开始从 0 累计 count
 // 如果 count 大于 result，那么让 result 等于 count
 // result 相当于记录最大子序和区间和（变相的算是调整了终止位置）
 
 var maxSubArray = function (nums) {
+    // 贪心算法
     let result = -Infinity;
     let count = 0;
     for (let i = 0; i < nums.length; i++) {
