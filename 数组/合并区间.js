@@ -15,13 +15,14 @@ var merge = function (intervals) {
     intervals.sort((a, b) => a[0] - b[0]);
     let prev = intervals[0];
     let result = [];
-    for (let i = 0; i < intervals.length; i++) {
-        let cur = intervals[i];
+    for (let i = 1; i < intervals.length; i++) {
+        let cur = intervals[i]; // cur 是当前区间，在 prev 后一个
+        // 如果后一个的左 > 前一个的右，说明区间不重合
         if (cur[0] > prev[1]) {
-            result.push(prev);
-            prev = cur;
+            result.push(prev); // 所以直接把前一个区间 push 进去即可
+            prev = cur; // 然后 prev 右移
         } else {
-            prev[1] = Math.max(cur[1], prev[1]);
+            prev[1] = Math.max(cur[1], prev[1]); // 如果如果后一个的左 < 前一个的右，那么右闭合的值是 cur[1], prev[1] 中较大的
         }
     }
     result.push(prev);
