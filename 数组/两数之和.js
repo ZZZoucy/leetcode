@@ -15,7 +15,7 @@
  * @return int整型一维数组
  */
 function twoSum(nums, target) {
-    //
+    // 哈希表
     let hash = {};
     for (let i = 0; i < nums.length; i++) {
         let n = target - nums[i];
