@@ -25,6 +25,7 @@ var pathSum = function (root, targetSum) {
     const traveltree = function (node, count) {
         curpath.push(node.val);
         count -= node.val;
+        // 如果到了叶子节点，并且 count 的值为 0，说明当前路径符合要求，插入到 respath 中
         if (node.left === null && node.right === null && count === 0) {
             respath.push([...curpath]);
         }

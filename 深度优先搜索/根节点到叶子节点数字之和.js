@@ -9,9 +9,7 @@
  * @return {number}
  */
 
-// 每个节点都对应一个数字，等于其父节点对应的数字乘以 10，再加上该节点的值
 // 从根节点开始，遍历每个节点，如果遇到叶子节点，则将叶子节点对应的数字加到数字之和
-// 如果当前节点不是叶子节点，则计算其子节点对应的数字，然后对子节点递归遍历
 
 var sumNumbers = function (root) {
     return dfs(root, 0);
@@ -20,7 +18,10 @@ const dfs = (root, prevSum) => {
     if (root === null) {
         return 0;
     }
+    // 每个节点都对应一个数字，等于其父节点对应的数字乘以 10，再加上该节点的值
     const sum = prevSum * 10 + root.val;
+    // 如果当前节点是叶子节点，就返回当前 sum
+    // 如果当前节点不是叶子节点，则计算其子节点对应的数字，然后对子节点递归遍历
     if (root.left === null && root.right === null) {
         return sum;
     } else {
