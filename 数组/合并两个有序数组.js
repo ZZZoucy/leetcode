@@ -23,6 +23,10 @@ var merge = function (nums1, m, nums2, n) {
     */
 
     // 双指针
+    // 将两个数组看作队列，每次从两个数组头部取出比较小的数字放到结果中
+    // 为两个数组分别设置一个指针 p1 与 p2
+​
+  来作为队列的头部指针
     let started = new Array(m + n).fill(0);
     var cur;
     let p1 = 0,
