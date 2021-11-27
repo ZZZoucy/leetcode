@@ -15,21 +15,38 @@
  * @param {TreeNode} root
  * @return {number}
  */
+
+// 广度优先搜索
+// 起点是root根节点，终点是最靠近根节点的那个叶子节点
+// BFS常用的场景就是让你在一幅图是找到从起点start到终点end的最近距离
+// 当前这个题目，使用BFS，depth每增加一步，队列中的所有节点都向前进一一步，这个逻辑保证了一旦找到一个终点，走的步数是最少的
+
 var minDepth = function (root) {
-    if (!root) {
-        return 0;
+    if (root == null) return 0;
+    // 根节点入列
+    const queue = [root];
+    // root本身就是一层，将depth初始化为1
+    let depth = 1;
+    // 直到清空队列
+    while (queue.length) {
+        let len = queue.length;
+        // 将当前队列中的所有节点向四周扩散
+        for (let i = 0; i < len; i++) {
+            let cur = queue.shift();
+            // 判断是否到达终点 如果没有孩子，直接返回所在层数
+            if (cur.left == null && cur.right == null) {
+                return depth;
+            }
+            // 将cur的相邻节点加入队列
+            if (cur.left != null) {
+                queue.push(cur.left);
+            }
+            if (cur.right != null) {
+                queue.push(cur.right);
+            }
+        }
+        // 在这里增加步数
+        depth++;
     }
-    // 到叶子节点 返回 1
-    if (!root.left && !root.right) {
-        return 1;
-    }
-    // 只有右节点时 递归右节点
-    if (!root.left) {
-        return 1 + minDepth(root.right);
-    }
-    // 只有左节点时 递归左节点
-    if (!root.right) {
-        return 1 + minDepth(root.left);
-    }
-    return Math.min(minDepth(root.left), minDepth(root.right)) + 1;
+    return depth;
 };

@@ -30,8 +30,11 @@
 var mergeTrees = function (root1, root2) {
     // 前序遍历
     const preOrder = (root1, root2) => {
+        // 直接操作 root1
+        // root1、root2 哪边为空，就把另一树的子树覆盖到 root1 上
         if (!root1) return root2;
         if (!root2) return root1;
+        // 如果都不为空，那么就把 root1、root2 这个位置上的节点值相加
         root1.val += root2.val;
         root1.left = preOrder(root1.left, root2.left);
         root1.right = preOrder(root1.right, root2.right);
