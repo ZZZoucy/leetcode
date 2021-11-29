@@ -16,13 +16,17 @@ var merge = function (intervals) {
     let prev = intervals[0];
     let result = [];
     for (let i = 1; i < intervals.length; i++) {
-        let cur = intervals[i]; // cur 是当前区间，在 prev 后一个
+        // cur 是当前区间，在 prev 后一个
+        let cur = intervals[i];
         // 如果后一个的左 > 前一个的右，说明区间不重合
         if (cur[0] > prev[1]) {
-            result.push(prev); // 所以直接把前一个区间 push 进去即可
-            prev = cur; // 然后 prev 右移
+            // 所以直接把前一个区间 push 进去即可
+            result.push(prev);
+            // 然后 prev 右移
+            prev = cur;
         } else {
-            prev[1] = Math.max(cur[1], prev[1]); // 如果如果后一个的左 < 前一个的右，那么右闭合的值是 cur[1], prev[1] 中较大的
+            // 如果如果后一个的左 < 前一个的右，那么右闭合的值是 cur[1], prev[1] 中较大的
+            prev[1] = Math.max(cur[1], prev[1]);
         }
     }
     result.push(prev);

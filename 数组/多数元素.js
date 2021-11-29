@@ -9,7 +9,7 @@
 // 摩尔投票法
 // start = 2  count = 1
 // 后面出现 2 就让 count +1 ； 不是 2 就让 count -1
-// 当 count = 0 的时候说明出现的数字次数都是一样的
+// 当 count = 0 的时候说明 i 之前出现的数字次数都是一样的
 // 那就让 start 重新等于下一个数，再次进行比较
 
 var majorityElement = function (nums) {
