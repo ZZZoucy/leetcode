@@ -21,7 +21,7 @@ var plusOne = function (digits) {
             return digits;
         }
     }
-    // digits 中所有的元素均为 9
+    // 如果 digits 中所有的元素均为 9 —— [9,9]
     const ans = new Array(len + 1).fill(0);
     ans[0] = 1;
     return ans;
