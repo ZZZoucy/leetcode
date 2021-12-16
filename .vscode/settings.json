@@ -1,3 +1,19 @@
 {
-    "cSpell.words": ["curpath", "haspathsum", "inorder", "inver", "maxlen", "newnode", "nextorder", "nums", "postorder", "prehead", "preorder", "respath", "targetsum", "traveltree"]
+    "cSpell.words": [
+        "curpath",
+        "haspathsum",
+        "inorder",
+        "inver",
+        "maxlen",
+        "newnode",
+        "nextorder",
+        "nums",
+        "postorder",
+        "prehead",
+        "preorder",
+        "respath",
+        "targetsum",
+        "traveltree",
+        "vals"
+    ]
 }
