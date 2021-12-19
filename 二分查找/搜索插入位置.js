@@ -8,18 +8,15 @@
  * @return {number}
  */
 var searchInsert = function (nums, target) {
-    const len = nums.length;
     let left = 0;
-    let right = len - 1;
-    let res = len;
+    let right = nums.length - 1;
     while (left <= right) {
-        let mid = ((right - left) >> 1) + left;
-        if (target <= nums[mid]) {
-            res = mid;
+        let mid = Math.floor((right - left) / 2) + left;
+        if (nums[mid] >= target) {
             right = mid - 1;
         } else {
             left = mid + 1;
         }
     }
-    return res;
+    return left;
 };
