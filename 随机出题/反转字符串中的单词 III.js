@@ -7,6 +7,7 @@
  */
 var reverseWords = function (s) {
     let res = [];
+    s;
     let length = s.length;
     let i = 0;
     while (i < length) {
