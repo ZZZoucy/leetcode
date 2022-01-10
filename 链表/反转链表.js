@@ -6,7 +6,6 @@
     this.next = null;
 }*/
 function ReverseList(head) {
-    // write code here
     // 用 pre 记录当前节点的前一个节点
     let pre = null;
     // 用 cur 记录当前节点
